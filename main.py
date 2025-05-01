@@ -11,8 +11,8 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=False,
+    allow_origins=["https://playlist-frontend1.s3-website.ap-northeast-2.amazonaws.com"],
+    allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
