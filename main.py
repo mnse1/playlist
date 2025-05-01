@@ -11,16 +11,11 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    # allow_origins=["http://localhost:3000"],
-    allow_origins=["*"],
+    allow_origins=["http://playlist-frontend1.s3-website.ap-northeast-2.amazonaws.com"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-@app.get("/")
-def read_root():
-    return {"message": "FastAPI is alive!"}
 
 ADMIN_PW =  "admin1234"
 Base.metadata.create_all(bind=engine)

@@ -7,7 +7,7 @@ const YouTubePlayer = ({ videoId, onEnd }) => {
     width: '640',
     playerVars: {
         autoplay: 1,
-        origin: "http://localhost:3000" // YouTube CORS 문제 방지
+        origin: "http://playlist-frontend1.s3-website.ap-northeast-2.amazonaws.com"
     },
   };
 
