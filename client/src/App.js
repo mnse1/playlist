@@ -11,7 +11,7 @@ const App = () => {
 
   const fetchPlaylist = async () => {
     try {
-      const response = await axios.get('http://13.125.75.235:8000/playlist');
+      const response = await axios.get('https://01a8-13-125-75-235.ngrok-free.app/playlist');
       setPlaylist(response.data);
     } catch (error) {
       console.error('Error fetching playlist:', error);
@@ -49,7 +49,7 @@ const App = () => {
               const adminPW = prompt("관리자 비밀번호를 입력하세요");
               if (!adminPW) return;
 
-              axios.delete(`http://13.125.75.235:8000/playlist/${song.id}`, {
+              axios.delete(`https://01a8-13-125-75-235.ngrok-free.app/playlist/${song.id}`, {
                 headers: {
                   'x-admin-secret': adminPW,
                 }
