@@ -11,7 +11,7 @@ const App = () => {
 
   const fetchPlaylist = async () => {
     try {
-      const response = await axios.get('https://7ef0-13-125-75-235.ngrok-free.app/playlist');
+      const response = await axios.get('https://moving-hot-psp-writers.trycloudflare.com/playlist');
       setPlaylist(Array.isArray(response.data) ? response.data : []);
     } catch (error) {
       console.error('Error fetching playlist:', error);
@@ -55,7 +55,7 @@ const App = () => {
               const adminPW = prompt("관리자 비밀번호를 입력하세요");
               if (!adminPW) return;
 
-              axios.delete(`https://7ef0-13-125-75-235.ngrok-free.app/playlist/${song.id}`, {
+              axios.delete(`https://moving-hot-psp-writers.trycloudflare.com/playlist/${song.id}`, {
                 headers: {
                   'x-admin-secret': adminPW,
                 }
