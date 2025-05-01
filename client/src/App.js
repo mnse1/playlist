@@ -42,33 +42,33 @@ const App = () => {
       <AddSongForm onSongAdded={fetchPlaylist} />
       <h2>list</h2>
       <ul>
-          {Array.isArray(playlist) && playlist.length > 0 ? (
-        playlist.map((song, idx) => (
+        {Array.isArray(playlist) && playlist.length > 0 ? (
+          playlist.map((song, idx) => (
           <li key={song.id}>
-            <strong>{song.title}</strong> - {song.artist}
-            <button onClick={() => setCurrentIndex(idx)}>재생</button>
-            <button onClick={() => {
-              const adminPW = prompt("관리자 비밀번호를 입력하세요");
-              if (!adminPW) return;
+          <strong>{song.title}</strong> - {song.artist}
+          <button onClick={() => setCurrentIndex(idx)}>재생</button>
+          <button onClick={() => {
+            const adminPW = prompt("관리자 비밀번호를 입력하세요");
+            if (!adminPW) return;
 
-              axios.delete(`${BASE_URL}/playlist/${song.id}`, {
-                headers: {
-                  'x-admin-secret': adminPW,
-                }
-              })
-              .then(fetchPlaylist)
-              .catch((error) => {
-                alert("삭제 실패: 관리자만 삭제할 수 있습니다.");
-                console.error("삭제 오류:", error);
-              });
-            }}>
-              삭제
-            </button>
+            axios.delete(`${BASE_URL}/playlist/${song.id}`, {
+              headers: {
+                'x-admin-secret': adminPW,
+              }
+            })
+            .then(fetchPlaylist)
+            .catch((error) => {
+              alert("삭제 실패: 관리자만 삭제할 수 있습니다.");
+              console.error("삭제 오류:", error);
+            });
+          }}>
+            삭제
+          </button>
           </li>
-        ))
-      ) : (
-        <li>플레이리스트가 없습니다.</li>
-      )}
+            ))
+          ) : (
+            <li>플레이리스트가 없습니다.</li>
+          )}
         {playlist.map((song, idx) => (
           <li key={song.id}>
             <strong>{song.title}</strong> - {song.artist}
