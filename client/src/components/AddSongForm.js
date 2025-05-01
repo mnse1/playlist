@@ -23,6 +23,7 @@ const AddSongForm = ({ onSongAdded }) => {
         },
       });
       onSongAdded(response.data);
+      console.log("버전 3");
       console.log("보내는 비밀번호:", adminPW);
       // 폼 초기화
       setTitle('');
