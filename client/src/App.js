@@ -12,7 +12,7 @@ const App = () => {
   const fetchPlaylist = async () => {
     try {
       const response = await axios.get('https://7ef0-13-125-75-235.ngrok-free.app/playlist');
-      setPlaylist(response.data);
+      setPlaylist(Array.isArray(response.data) ? response.data : []);
     } catch (error) {
       console.error('Error fetching playlist:', error);
     }
@@ -41,6 +41,12 @@ const App = () => {
       <AddSongForm onSongAdded={fetchPlaylist} />
       <h2>list</h2>
       <ul>
+        {Array.isArray(playlist) ? playlist.map((song, idx) => (
+      <li key={song.id}>
+        <strong>{song.title}</strong> - {song.artist}
+        {/* ... */}
+      </li>
+    )) : <li>플레이리스트가 없습니다.</li>}
         {playlist.map((song, idx) => (
           <li key={song.id}>
             <strong>{song.title}</strong> - {song.artist}
