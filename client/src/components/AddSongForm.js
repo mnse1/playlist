@@ -7,6 +7,7 @@ const AddSongForm = ({ onSongAdded }) => {
   const [artist, setArtist] = useState('');
   const [audioUrl, setAudioUrl] = useState('');
   const [adminPW, setAdminPW] = useState('');
+  const BASE_URL = 'http://13.125.75.235';  // EC2 퍼블릭 IP
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -17,7 +18,7 @@ const AddSongForm = ({ onSongAdded }) => {
         audio_url: audioUrl,
       };
       // 백엔드에 새로운 노래 추가 요청
-      const response = await axios.post('https://moving-hot-psp-writers.trycloudflare.com/playlist', newSong, {
+      const response = await axios.post(`${BASE_URL}/playlist`, newSong, {
         headers: {
           'x-admin-secret': adminPW, // 서버에 설정한 비밀번호와 일치해야 함
         },

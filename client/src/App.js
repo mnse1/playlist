@@ -8,10 +8,11 @@ import './App.css';
 const App = () => {
   const [playlist, setPlaylist] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const BASE_URL = 'http://13.125.75.235';  // EC2 퍼블릭 IP
 
   const fetchPlaylist = async () => {
     try {
-      const response = await axios.get('https://moving-hot-psp-writers.trycloudflare.com/playlist');
+      const response = await axios.get(`${BASE_URL}/playlist`);
       setPlaylist(Array.isArray(response.data) ? response.data : []);
     } catch (error) {
       console.error('Error fetching playlist:', error);
@@ -55,7 +56,7 @@ const App = () => {
               const adminPW = prompt("관리자 비밀번호를 입력하세요");
               if (!adminPW) return;
 
-              axios.delete(`https://moving-hot-psp-writers.trycloudflare.com/playlist/${song.id}`, {
+              axios.delete(`${BASE_URL}/playlist/${song.id}`, {
                 headers: {
                   'x-admin-secret': adminPW,
                 }
