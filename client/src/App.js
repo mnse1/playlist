@@ -42,11 +42,11 @@ const App = () => {
       <h2>list</h2>
       <ul>
         {Array.isArray(playlist) ? playlist.map((song, idx) => (
-      <li key={song.id}>
-        <strong>{song.title}</strong> - {song.artist}
-        {/* ... */}
-      </li>
-    )) : <li>플레이리스트가 없습니다.</li>}
+          <li key={song.id}>
+          <strong>{song.title}</strong> - {song.artist}
+          {/* ... */}
+        </li>
+      )) : <li>플레이리스트가 없습니다.</li>}
         {playlist.map((song, idx) => (
           <li key={song.id}>
             <strong>{song.title}</strong> - {song.artist}
