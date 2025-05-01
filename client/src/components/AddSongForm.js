@@ -17,7 +17,7 @@ const AddSongForm = ({ onSongAdded }) => {
         audio_url: audioUrl,
       };
       // 백엔드에 새로운 노래 추가 요청
-      const response = await axios.post('http://localhost:8000/playlist', newSong, {
+      const response = await axios.post('http://13.125.75.235:8000/playlist', newSong, {
         headers: {
           'x-admin-secret': adminPW, // 서버에 설정한 비밀번호와 일치해야 함
         },
