@@ -5,12 +5,6 @@ import crud
 from typing import List
 from schemas import PlaylistResponse
 
- 
-# uvicorn main:app --reload to run the server /playlist
-# npm start to run the client   /playlist/client
-
-#app = FastAPI()
-
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
@@ -24,9 +18,8 @@ app.add_middleware(
 )
 
 ADMIN_PW =  "admin1234"
-Base.metadata.create_all(bind=engine)
+# Base.metadata.create_all(bind=engine)
 
-# DB 세션을 의존성으로 주입받음
 @app.get("/")
 def read_root(db: Session = Depends(get_db)):
     return {"message": "Hello, World!"}
