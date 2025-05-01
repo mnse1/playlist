@@ -4,7 +4,7 @@ from database import engine, get_db, Base
 import crud
 from typing import List
 from schemas import PlaylistResponse
-from fastapi import FastAPI
+
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
