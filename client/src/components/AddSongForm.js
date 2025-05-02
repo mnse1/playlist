@@ -24,8 +24,6 @@ const AddSongForm = ({ onSongAdded }) => {
         },
       });
       onSongAdded(response.data);
-      console.log("버전 3");
-      console.log("보내는 비밀번호:", adminPW);
       // 폼 초기화
       setTitle('');
       setArtist('');
@@ -63,7 +61,7 @@ const AddSongForm = ({ onSongAdded }) => {
         type="password"
         value={adminPW}
         onChange={(e) => setAdminPW(e.target.value)}
-        placeholder="관리자 비밀번호" // 🔐 UI에 표시
+        placeholder="관리자 비밀번호"
         required
       />
       <button type="submit">Add</button>
