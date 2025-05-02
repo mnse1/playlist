@@ -6,6 +6,11 @@ from typing import List
 from schemas import PlaylistResponse
 
 from fastapi.middleware.cors import CORSMiddleware
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+ADMIN_PW = os.getenv("ADMIN_PW")
 
 app = FastAPI()
 
@@ -18,7 +23,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-ADMIN_PW =  "admin1234"
+
 Base.metadata.create_all(bind=engine)
 
 @app.get("/")
