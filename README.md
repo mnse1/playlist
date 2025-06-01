@@ -7,6 +7,8 @@ AWS EC2, S3, RDS 통해 배포
 관리자 비밀번호 인증
 
 기술 스택
+
+
   Backend: FastAPI, SQLAlchemy, PostgreSQL (AWS RDS)
   
   Frontend: React, Axios, YouTube React Player
@@ -16,6 +18,8 @@ AWS EC2, S3, RDS 통해 배포
   기타: CORS, Pydantic, RESTful API
 
 기능
+
+
   백엔드 (FastAPI)
   곡 추가 (POST /playlist) - 관리자 인증 필요
   
