@@ -30,19 +30,19 @@ YouTube URL 기반으로 곡을 추가/삭제/수정/재생 가능 + 관리자 �
 ---
 
 ## 프로젝트 구조
-  playlist/
-  │ ├── crud.py
-  │ ├── database.py
-  │ ├── main.py
-  │ ├── models.py
-  │ └── schemas.py
-  ├── client/
-  │ ├── src/
-  │ │ ├── App.js
-  │ │ ├── components/
-  │ │ ├── AddSongForm.js
-  │ │ └── YouTubePlayer.js
-  └── README.md
+      playlist/
+      │ ├── crud.py
+      │ ├── database.py
+      │ ├── main.py
+      │ ├── models.py
+      │ └── schemas.py
+      ├── client/
+      │ ├── src/
+      │ │ ├── App.js
+      │ │ ├── components/
+      │ │ ├── AddSongForm.js
+      │ │ └── YouTubePlayer.js
+      └── README.md
 
 ---
 
