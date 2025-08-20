@@ -46,5 +46,5 @@ YouTube URL 기반으로 곡을 추가/삭제/수정/재생 가능 + 관리자 �
 
 ---
 
-## 배포 주소
+## 배포 주소 (중단
 http://playlist-frontend1.s3-website.ap-northeast-2.amazonaws.com/
